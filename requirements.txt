@@ -5,3 +5,4 @@ flask
 flask-cors
 volcengine-python-sdk[ark]
 gunicorn
+python-dotenv
