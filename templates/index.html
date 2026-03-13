@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>文章抓取工具</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📝 文章总结工具</h1>
+            <p>支持普通网站文章和微信公众号文章进行AI智能总结</p>
+        </header>
+
+        <div class="input-section">
+            <div class="input-group">
+                <label for="url-input">文章链接</label>
+                <input type="text" id="url-input" placeholder="请输入文章链接，例如：https://mp.weixin.qq.com/s/xxxxx">
+            </div>
+
+            <button id="fetch-btn" class="btn btn-primary">抓取并总结</button>
+        </div>
+
+        <div id="loading" class="loading" style="display: none;">
+            <div class="spinner"></div>
+            <p id="loading-text">正在抓取文章...</p>
+        </div>
+
+        <div id="error-message" class="error-message" style="display: none;"></div>
+
+        <div id="preview-section" class="preview-section" style="display: none;">
+            <h2>AI总结预览</h2>
+            
+            <div class="article-info">
+                <div class="info-item">
+                    <strong>标题：</strong>
+                    <span id="article-title"></span>
+                </div>
+                <div class="info-item">
+                    <strong>总结日期：</strong>
+                    <span id="summary-date"></span>
+                </div>
+                <div class="info-item">
+                    <strong>原文链接：</strong>
+                    <a id="article-url" href="#" target="_blank"></a>
+                </div>
+            </div>
+
+            <div class="summary-section">
+                <h3>📄 AI智能总结</h3>
+                <div id="summary-content" class="content-box"></div>
+            </div>
+
+            <div class="action-buttons">
+                <button id="download-btn" class="btn btn-success">💾 下载总结文档</button>
+                <button id="reset-btn" class="btn btn-secondary">🔄 重新抓取</button>
+            </div>
+        </div>
+
+        <div id="success-message" class="success-message" style="display: none;">
+            <h3>✅ 操作成功！</h3>
+            <p id="success-text"></p>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,7 @@
+requests
+beautifulsoup4
+lxml
+flask
+flask-cors
+volcengine-python-sdk[ark]
+gunicorn
