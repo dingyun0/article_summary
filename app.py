@@ -17,7 +17,7 @@ load_dotenv()
 app = Flask(__name__)
 CORS(app)
 
-ARK_API_KEY = os.getenv("DOUBAO_API_KEY", "0892d12b-a090-4ce2-aeb4-4179b2e99ecb")
+ARK_API_KEY = os.getenv("DOUBAO_API_KEY")
 ARK_MODEL = "doubao-seed-2-0-lite-260215"
 ARK_BASE_URL = "https://ark.cn-beijing.volces.com/api/v3"
 
